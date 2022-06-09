@@ -11,20 +11,20 @@ namespace MyApp // Note: actual namespace depends on the project name.
             int hours = 0;
             int minutes = 0;
             int seconds = 0;
-            int gg = 0;
-            int tt = 0;
-            int ss = 0;
+            int hours1 = 0;
+            int minutes1 = 0;
+            int seconds1 = 0;
 
             do
             {
                 try
                 {
                     Console.WriteLine("Введите часы: ");
-                    gg = Convert.ToInt32(Console.ReadLine());
-                    if (23 < gg || gg < 0)
+                    hours1 = Convert.ToInt32(Console.ReadLine());
+                    if (23 < hours1 || hours1 < 0)
                     {
                         throw new Exception("часы больше 24 или меньше 0");
-                        gg = 0;
+                        hours1 = 0;
                     }            
                     
                 }
@@ -35,8 +35,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 }
             
             }
-            while (23 < gg || gg < 0);
-            hours = gg;          
+            while (23 < hours1 || hours1 < 0);
+            hours = hours1;          
 
             do
             {
@@ -44,10 +44,10 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 {
                     Console.WriteLine("Введите минуты: ");
                     tt = Convert.ToInt32(Console.ReadLine());
-                    if (59 < tt || tt < 0)
+                    if (59 < minutes1 || minutes1 < 0)
                     {
                         throw new Exception("минуты больше 60 или меньше 0");
-                        tt = 0;
+                        minutes1 = 0;
                     }
 
                 }
@@ -58,19 +58,19 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 }
 
             }
-            while (59 < tt || tt < 0);
-            minutes = tt;
+            while (59 < minutes1 || minutes1 < 0);
+            minutes = minutes1;
 
             do
             {
                 try
                 {
                     Console.WriteLine("Введите секунды: ");
-                    ss = Convert.ToInt32(Console.ReadLine());
-                    if (59 < ss || ss < 0)
+                    seconds1 = Convert.ToInt32(Console.ReadLine());
+                    if (59 < seconds1 || seconds1 < 0)
                     {
                         throw new Exception("секунды больше 60 или меньше 0");
-                        ss = 0;
+                        seconds1 = 0;
                     }
 
                 }
@@ -81,8 +81,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 }
 
             }
-            while (59 < ss || ss < 0);
-            seconds = ss;
+            while (59 < seconds1 || seconds1 < 0);
+            seconds = seconds1;
 
             Time = new TimeSpan(hours, minutes, seconds);
             Console.WriteLine("Введенное время: {0}, В секундах: {1}", Time, Time.TotalSeconds);
